@@ -12,11 +12,13 @@ Issues surrounding from initial booting the USB itself to right before you choos
 * [Stuck on `OCB: System has no boot entries`](#stuck-on-ocb-system-has-no-boot-entries)
 * [Stuck on `OCS: No schema for DSDT, KernelAndKextPatch, RtVariable, SMBIOS, SystemParameters...`](#stuck-on-ocs-no-schema-for-dsdt-kernelandkextpatch-rtvariable-smbios-systemparameters)
 * [Stuck on `OC: Driver XXX.efi at 0 cannot be found`](#stuck-on-oc-driver-xxx-efi-at-0-cannot-be-found)
+* [Stuck on `failed to boostrap img4 values`](#stuck-on-failed-to-boostrap-img4-values)
 * [Receiving `Failed to parse real field of type 1`](#receiving-failed-to-parse-real-field-of-type-1)
 * [Can't select anything in the picker](#can-t-select-anything-in-the-picker)
 * [SSDTs not being added](#ssdts-not-being-added)
 * [Booting OpenCore reboots to BIOS](#booting-opencore-reboots-to-bios)
 * [OCABC: Incompatible OpenRuntime r4, require r10](#ocabc-incompatible-openruntime-r4-require-r10)
+
 
 ## Stuck on a black screen before picker
 
@@ -103,6 +105,13 @@ This is due to an entry being in your config.plist, however not present in your 
   * If not, please run Cmd/Ctrl+R with OpenCore to re-snapshot your config.plist
 
 Note that the entries are case-sensitive.
+
+## Stuck on `failed to boostrap img4 values`
+
+This appears to be caused by issues with secure boot. 
+
+* Ensure secure boot is disabled in BIOS, and set Misc -> Security -> SecureBootModel to 'Disabled' rather than Default as shown in the guide.
+
 
 ## Receiving "Failed to parse real field of type 1"
 
